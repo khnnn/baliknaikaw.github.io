@@ -3,110 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I MISS YOU BABYYYYYY</title>
-    <style>
-        body {
-            background-color: #000; /* Black background */
-            color: #ee82ee; /* Violet text color */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-        }
-        .container h1 {
-            color: #ee82ee;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .choices {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        label {
-            background-color: #444;
-            padding: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-        }
-        input[type="radio"] {
-            display: none;
-        }
-        input[type="radio"]:checked + label {
-            background-color: #7b00ff; /* Brighter violet when selected */
-        }
-        button {
-            background-color: #6a0dad; /* Darker violet for buttons */
-            color: #ee82ee;
-            border: none;
-            padding: 15px;
-            border-radius: 5px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #7b00ff; /* Brighter violet on hover */
-        }
-    </style>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <div class="quiz-page" id="page1">
+            <h2>Question 1: Do you like coding?</h2>
+            <button class="choice">YES</button>
+            <button class="choice">YEAH</button>
+            <button class="choice">YEP</button>
+            <button class="choice">BIG YES</button>
+            <button class="next-btn" onclick="nextPage(2)">Next</button>
+        </div>
+        
+        <div class="quiz-page" id="page2" style="display:none;">
+            <h2>Question 2: Do you enjoy solving problems?</h2>
+            <button class="choice">YES</button>
+            <button class="choice">YEAH</button>
+            <button class="choice">YEP</button>
+            <button class="choice">BIG YES</button>
+            <button class="next-btn" onclick="nextPage(3)">Next</button>
+        </div>
+        
+        <div class="quiz-page" id="page3" style="display:none;">
+            <h2>Question 3: Are you interested in web development?</h2>
+            <button class="choice">YES</button>
+            <button class="choice">YEAH</button>
+            <button class="choice">YEP</button>
+            <button class="choice">BIG YES</button>
+            <button class="next-btn" onclick="nextPage(4)">Next</button>
+        </div>
 
-<div class="container">
-    <h1>MISS YOU BABY</h1>
-    <div class="question">
-        <p>Maari ba tayong bumalik sa umpisa?</p> <!-- Edit this question -->
+        <div class="quiz-page" id="page4" style="display:none;">
+            <h2>Question 4: Do you think coding is fun?</h2>
+            <button class="choice">YES</button>
+            <button class="choice">YEAH</button>
+            <button class="choice">YEP</button>
+            <button class="choice">BIG YES</button>
+            <button class="next-btn" onclick="nextPage(5)">Next</button>
+        </div>
+        
+        <div class="quiz-page" id="page5" style="display:none;">
+            <h2>Question 5: Are you ready to learn more?</h2>
+            <button class="choice">YES</button>
+            <button class="choice">YEAH</button>
+            <button class="choice">YEP</button>
+            <button class="choice">BIG YES</button>
+            <button class="next-btn" onclick="nextPage(1)">Finish</button>
+        </div>
     </div>
-    <div class="choices">
-        <input type="radio" id="choice1" name="question1" value="BALIK NA IKAW : (">
-        <label for="choice1">YEAH</label> <!-- Edit choice 1 -->
-        
-        <input type="radio" id="choice2" name="question1" value="BALIK NA IKAW : (">
-        <label for="choice2">YEP</label> <!-- Edit choice 2 -->
-        
-        <input type="radio" id="choice3" name="question1" value="BALIK NA IKAW : (">
-        <label for="choice3">YES</label> <!-- Edit choice 3 -->
-        
-        <input type="radio" id="choice4" name="question1" value="BALIK NA IKAW : (">
-        <label for="choice4">BIG YES</label> <!-- Edit choice 4 -->
-    </div>
-    <button onclick="submitAnswer()">Submit</button>
-</div>
 
-<script>
-    function submitAnswer() {
-        const choices = document.getElementsByName('question1');
-        let selectedChoice = '';
-        
-        for (const choice of choices) {
-            if (choice.checked) {
-                selectedChoice = choice.value;
-                break;
-            }
+    <script>
+        function nextPage(pageNumber) {
+            const pages = document.querySelectorAll('.quiz-page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById('page' + pageNumber).style.display = 'block';
         }
-
-        if (selectedChoice) {
-            alert('You selected: ' + selectedChoice);
-        } else {
-            alert('Please select an answer.');
-        }
-    }
-</script>
-
+    </script>
 </body>
 </html>
