@@ -60,6 +60,10 @@
             background-color: #5a189a; /* Darker purple on hover */
         }
 
+        .choice:active {
+            background-color: #4a0f66; /* Even darker purple when clicked */
+        }
+
         /* Next Button Styling */
         .next-btn {
             margin-top: 20px;
@@ -76,6 +80,10 @@
 
         .next-btn:hover {
             background-color: #c71585; /* Darker pink on hover */
+        }
+
+        .next-btn:active {
+            background-color: #8b0a50; /* Even darker pink when clicked */
         }
 
         /* Responsive Design */
@@ -99,7 +107,7 @@
 <body>
     <div class="container">
         <div class="quiz-page" id="page1">
-            <h2>Maari ba tayong bumalik sa umpisa?</h2>
+            <h2>pwede po bang bumalik tayo sa dati?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -108,7 +116,7 @@
         </div>
         
         <div class="quiz-page" id="page2">
-            <h2>Pwede po bang umuwi na tayo, babawi ako</h2>
+            <h2>Maari ba tayong bumuo ulit ng bagong pahina?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -117,7 +125,7 @@
         </div>
         
         <div class="quiz-page" id="page3">
-            <h2>Question 3: Are you interested in web development?</h2>
+            <h2>Do you still miss me?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -126,7 +134,7 @@
         </div>
 
         <div class="quiz-page" id="page4">
-            <h2>Question 4: Do you think coding is fun?</h2>
+            <h2>Do you still feel comfortable talking to me?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -135,12 +143,12 @@
         </div>
         
         <div class="quiz-page" id="page5">
-            <h2>Question 5: Are you ready to learn more?</h2>
+            <h2>Is there another chance?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
             <button class="choice">BIG YES</button>
-            <button class="next-btn" onclick="nextPage(1)">Finish</button>
+            <button class="next-btn" onclick="redirect()">Finish</button>
         </div>
     </div>
 
@@ -149,6 +157,10 @@
             const pages = document.querySelectorAll('.quiz-page');
             pages.forEach(page => page.style.display = 'none');
             document.getElementById('page' + pageNumber).style.display = 'block';
+        }
+
+        function redirect() {
+            window.location.href = "https://www.example.com"; // Replace with the URL you want to redirect to
         }
     </script>
 </body>
