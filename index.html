@@ -4,12 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Black background for the body */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px; /* Restrict max width for better mobile responsiveness */
+            text-align: center;
+            background-color: #2d2d2d; /* Darker shade for container background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Softer shadow effect */
+            color: #fff; /* White text color for readability */
+        }
+
+        /* Quiz Page Styling */
+        .quiz-page {
+            display: none; /* Hide all pages by default */
+        }
+
+        .quiz-page:first-of-type {
+            display: block; /* Show the first page */
+        }
+
+        h2 {
+            color: #ff79c6; /* Pink color for the question text */
+            margin-bottom: 20px; /* Space between question and buttons */
+        }
+
+        /* Choice Button Styling */
+        .choice {
+            display: block;
+            width: 100%; /* Full width button for mobile UI */
+            margin: 10px 0;
+            padding: 15px 0;
+            background-color: #8a2be2; /* Purple background for choice buttons */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Smooth hover effect */
+        }
+
+        .choice:hover {
+            background-color: #5a189a; /* Darker purple on hover */
+        }
+
+        /* Next Button Styling */
+        .next-btn {
+            margin-top: 20px;
+            padding: 15px 0;
+            width: 100%; /* Full width button for mobile UI */
+            background-color: #ff1493; /* Bright pink background for the next button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Smooth hover effect */
+        }
+
+        .next-btn:hover {
+            background-color: #c71585; /* Darker pink on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%; /* Adjust container width for smaller screens */
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 18px; /* Adjust font size for smaller screens */
+            }
+
+            .choice, .next-btn {
+                font-size: 14px; /* Adjust button font size for smaller screens */
+                padding: 12px 0; /* Adjust button padding for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="quiz-page" id="page1">
-            <h2>Question 1: Do you like coding?</h2>
+            <h2>Maari ba tayong bumalik sa umpisa?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -17,8 +107,8 @@
             <button class="next-btn" onclick="nextPage(2)">Next</button>
         </div>
         
-        <div class="quiz-page" id="page2" style="display:none;">
-            <h2>Question 2: Do you enjoy solving problems?</h2>
+        <div class="quiz-page" id="page2">
+            <h2>Pwede po bang umuwi na tayo, babawi ako</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
             <button class="choice">YEP</button>
@@ -26,7 +116,7 @@
             <button class="next-btn" onclick="nextPage(3)">Next</button>
         </div>
         
-        <div class="quiz-page" id="page3" style="display:none;">
+        <div class="quiz-page" id="page3">
             <h2>Question 3: Are you interested in web development?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
@@ -35,7 +125,7 @@
             <button class="next-btn" onclick="nextPage(4)">Next</button>
         </div>
 
-        <div class="quiz-page" id="page4" style="display:none;">
+        <div class="quiz-page" id="page4">
             <h2>Question 4: Do you think coding is fun?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
@@ -44,7 +134,7 @@
             <button class="next-btn" onclick="nextPage(5)">Next</button>
         </div>
         
-        <div class="quiz-page" id="page5" style="display:none;">
+        <div class="quiz-page" id="page5">
             <h2>Question 5: Are you ready to learn more?</h2>
             <button class="choice">YES</button>
             <button class="choice">YEAH</button>
